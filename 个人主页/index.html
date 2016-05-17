@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/base.css" />
+		<script type="text/javascript" src="js/swiper-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<title></title>
+		<style>
+		/*left*/
+		  #box{
+		    width:100%;
+		    height:100%;
+		  }
+		  #container{
+		    width:40%;
+        height:100%;
+        float:left ;
+        background: linear-gradient(to bottom, cadetblue ,lightgray);
+		  }
+		  .pe{
+		    width:100px;
+		    height:100px;
+		    background:url(img/05.jpg);v accelerator: ;
+		    border-radius:50%;
+		    margin:0 auto ;
+		    margin-top: 20%;
+		  }
+		  
+		  /*right*/
+		  #content{
+		    width:60%;
+        height:100%;
+        float:left ;
+        background:lightgray;
+        
+		  }
+		  header{
+		    
+         height: 50px;
+         background: cadetblue;
+       }
+       section{
+         overflow-y:auto ;
+         width:100% ;
+		     height:500px;
+       }
+       /*footer{
+         height: 50px;
+         background: blue;
+         
+       }*/
+       #wrap{
+         -webkit-box-orient:vertical;         
+         height: 100%;
+       }
+       #a{
+         height:80%;
+         width:auto;
+         background: lightgray;
+         padding-left:30%;
+       }
+       #b{
+         height:40%;
+         width:auto;
+         background: greenyellow;
+       }
+       #b p,#c p{
+         height:5%;
+         width:100%;
+         text-align: center;
+         font-size:30px ;
+         position:relative;
+         top:10%;
+       }
+       #b h1{
+         margin-top:6%;
+         font-size:20px;
+         line-height:40px;
+         text-align: center;
+         margin-left:10%;
+         margin-right:10%;
+       }
+       #c{
+         height:80%;
+         width:auto;
+         background: lightgoldenrodyellow;
+       }
+       #c p{
+         width:100%;
+         height:20%;
+       }
+       #c span  img{
+         width:20%;
+         height:60%;
+         margin-left: 3%;
+       }
+       #c span{
+         position:relative;
+         top:5%;
+         left:2%;
+       }
+       .introduce {
+        height: 200px;
+        font-size:20px ;
+        color: white;
+        text-align: center;
+        line-height: 20px;
+        margin-top: 10%;
+      }
+      #a p{
+        width:auto;
+        height:7%;
+        font-size:20px;
+        margin-left:20%;
+        margin-top:5% ;
+        
+      }
+      input {
+        margin-top:5% ;
+        height:7%;
+        width:15%;
+      }
+      #a #message{
+        width:30%;
+        height:20%;
+        margin-top:2% ;
+        border:1px solid darkgray;
+      }
+      #a #subject{
+        width:34%;
+      }
+      /*ul{
+        width：100%；
+        height:50px;
+      }
+      ul li{
+        width：300px;
+        height:50px;
+        border:1px solid black;
+        display: inline-block;
+      }*/
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		  <!--left-->
+		  <div id="container">
+		    <div class="pe"></div>
+		    <div class="introduce">
+		      <p class="introduce-text">
+		        <h1>My name is Yang yangyang</h1><br/><br/>
+  		    <strong>座右铭：细节决定成败，态度决定一切。</strong><br/><br/>
+  		    <h1>专业技能：掌握css, javascript, jQuery, HTML5<br/><br/>等web前端技术。</h1>
+		      </p>
+		    </div>
+		  </div>
+		    
+		  <!--right-->
+		  <div id="content">
+		      <div id="wrap" class="box-flex">
+          <header>
+          </header>
+          <section  class="box-flex-item">
+            <div id="b">
+              <p>个人概括</p>
+              <h1>&nbsp;&nbsp;&nbsp;在外卖系统刚刚上线的时候，小编就重点提示过，为了满足客户需求，江湖外卖系统这次是原生开发，那么什么是原生APP?原生APP又称Native APP，该开发针对IOS、Android等不同的手机操作系统要采用不同的语言</h1>
+            </div>
+            <div id="c">
+              <p>作品展示</p>
+              <span>
+              <img src="img/05.jpg"/>
+              <img src="img/05.jpg"/>
+              <img src="img/05.jpg"/>
+              <img src="img/05.jpg"/>
+              </span>
+            </div>
+            <!--<div id="d"></div>-->
+            <div id="a"> 
+                <p><strong>联系我们</strong></p>
+                             姓名 :<input id="name" type="text" name="name" placeholder="  Name">
+            Email ：<input id="email" type="text" placeholder="  Email"><br/>
+          Subject ：<input id="subject" type="text" placeholder="  Subject"><br/>
+          Message : <input message： id="message" type="text"><br/>
+                <input type="submit" value="发送">
+            </div>
+              
+          </section>
+          <!--<footer>    
+            <a class="bottom">bottom</a>
+          </footer>-->
+		  </div>
+		</div>
+		<script>
+		   $(function() {
+          function Type(obj, speed, welcome) {
+            //            需要注意的是这里用到了this来声明, 而不是var, 因为用var是用来定义私有方法的.
+            this.obj = obj;
+            this.speed = speed;
+            this.welcome = welcome;
+          }
+          //        用prototype属性来定义类的方法.
+          Type.prototype = {
+            init: function() {
+              var str = this.obj.html();
+              this.obj.html(this.welcome);
+              this.add(str);
+            },
+            add: function(con) {
+              var me = this;
+              var str;
+              var strlen = 0;
+              var t = setInterval(function() {
+                str = con.substring(0, strlen) + "_";
+                me.obj.html(str);
+                //内容打印完毕
+                if (strlen == con.length-1) {
+                  clearInterval(t);
+                }
+                strlen = strlen + 1;
+              }, me.speed);
+            }
+          }
+          var a = new Type($('.introduce'), 100, '正在初始化...');
+          a.init();
+        });
+        
+		</script>
+	</body>
+</html>
